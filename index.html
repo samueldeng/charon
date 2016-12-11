@@ -3,7 +3,9 @@
   <head>
     <title>Charon</title>
     <meta charset="UTF-8">
+    <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 
     <!-- Polyfill(s) for older browsers -->
@@ -15,11 +17,22 @@
 
     <script src="systemjs.config.js"></script>
     <script>
-      System.import('app').catch(function(err){ console.error(err); });
+
+      System.import('app').then(function () {
+          document.getElementById("progress-loading").setAttribute("value","100");
+
+      }).catch(function(err){
+          console.error(err);
+      });
     </script>
   </head>
 
   <body>
-    <charon-app>Loading...</charon-app>
+  <charon-app>
+    <div style="width:100%; position: absolute; top: 50%; text-align: center;">
+      <h1>Loading...</h1>
+      <progress id="progress-loading" style="width: 100%;" class="progress progress-striped progress-success" value="50" max="100"></progress>
+    </div>
+  </charon-app>
   </body>
 </html>
