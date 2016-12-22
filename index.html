@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 
     <!-- Polyfill(s) for older browsers -->
@@ -29,10 +29,16 @@
 
   <body>
   <charon-app>
-    <div style="width:100%; position: absolute; top: 50%; text-align: center;">
-      <h1>Loading...</h1>
-      <progress id="progress-loading" style="width: 100%;" class="progress progress-striped progress-success" value="50" max="100"></progress>
-    </div>
+      <div class="container" style="width:100%; position: absolute; top: 38%; text-align: center;">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <h4>Loading...</h4>
+            <progress id="progress-loading" style="width: 100%;" class="progress progress-striped progress-success" value="50" max="100"></progress>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </div>
   </charon-app>
   </body>
 </html>
